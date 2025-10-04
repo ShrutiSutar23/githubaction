@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Github-dump_context_to_log
-        run: echo '$ {{ ToJSON(github) }}'
+        run: echo '${{ ToJSON(github) }}'
