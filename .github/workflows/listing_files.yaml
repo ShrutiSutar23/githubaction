@@ -1,0 +1,19 @@
+name: Action workflows  
+on: [push]
+jobs:
+  job_01:
+    runs-on: ubuntu-latest
+    stesp: 
+      - name: List of files
+        run: |
+            pwd
+            ls -a
+            echo $GITHUB_SHA
+            echo $GITHUB_REPOSITORY
+            echo $GITHUB_WORKSPACE
+      - name: cloning GITHUB_REPOSITORY
+        uses: action/checkout@v1
+      - name: List files after checkout
+        run: |
+          pwd 
+          ls -a
