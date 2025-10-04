@@ -1,0 +1,17 @@
+name: hello
+  on: push
+  jobs:
+    context:
+      runs-on: ubuntu-latest
+      steps: 
+        - name: job context
+          run: echo '${{ ToJSON(job) }}'
+        - name: dump steps context
+          run: echo '${{ ToJSON(steps) }}'
+        - name: dump runner context
+          run: echo '${{ ToJSON(runner) }}'
+        - name: dump strategy context
+          run: echo '${{ ToJSON(strategy) }}'
+        - name: dump matrix context
+          run: echo '${{ ToJSON(matrix) }}'
+    
